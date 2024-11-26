@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "Rohan",
+    "avatarUrl": "https://media.licdn.com/dms/image/v2/D4D03AQG2iGUFzw8vCA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718275224550?e=2147483647&v=beta&t=purXgE-QynwJ0EHUvkDbJ2g5aJbLU21CEVqEYMzKXsk",
+    "mediaUrl": "https://images.unsplash.com/photo-1719937050640-71cfd3d851be?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+    "description": "The React component library you always wanted.",
+    "likes": 8100000,
+    "timeAgo": "2 DAYS AGO"
+  },
+  {
+    "id": 2,
+    "username": "Rohan",
+    "avatarUrl": "https://media.licdn.com/dms/image/v2/D4D03AQG2iGUFzw8vCA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718275224550?e=2147483647&v=beta&t=purXgE-QynwJ0EHUvkDbJ2g5aJbLU21CEVqEYMzKXsk",
+    "mediaUrl": "https://images.unsplash.com/photo-1719937050640-71cfd3d851be?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+    "description": "Build encapsulated components that manage their state.",
+    "likes": 10200000,
+    "timeAgo": "1 WEEK AGO"
+  }
+]
