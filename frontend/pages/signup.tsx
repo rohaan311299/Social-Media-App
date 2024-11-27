@@ -9,10 +9,46 @@ const SignUp: NextPage = () => {
     confirmPassword: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    // Add password validation
+    if (formData.password.length < 8) {
+      alert('Password must be at least 8 characters long');
+      return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:4000/api/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: formData.email,
+                password: formData.password,
+            }),
+        });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Signup successful!');
+        // Redirect to signin page or dashboard
+        window.location.href = '/signin';
+      } else {
+        alert(data.message || 'Signup failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,24 +1,47 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import styles from '../styles/Signin.module.css';
 
 const SignIn: NextPage = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+
+    try {
+      const response = await fetch('http://localhost:4000/api/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Sign in successful!');
+        // Redirect to dashboard or homepage
+        router.push('/dashboard');
+      } else {
+        alert(data.message || 'Sign in failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -62,7 +85,7 @@ const SignIn: NextPage = () => {
           </button>
 
           <div className={styles.signupLink}>
-            Don't have an account? <a href="/signup">Sign up</a>
+            Don&apos;t have an account? <a href="/signup">Sign up</a>
           </div>
         </form>
       </div>
