@@ -1,0 +1,20 @@
+.navItem {
+  list-style: none;
+  width: 100%;
+  color: black
+}
+
+.navItem :hover{
+    background-color: grey;
+}
+
+.navItem a {
+  text-decoration: none;
+}
+
+.navLink {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-decoration: none;
+}

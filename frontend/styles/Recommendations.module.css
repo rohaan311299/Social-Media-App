@@ -1,0 +1,77 @@
+.recommendationsContainer {
+    padding: 16px;
+    max-width: 320px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .header h2 {
+    color: #737373;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .seeAll {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .suggestionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .suggestionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .userInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .userText {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .username {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .followedBy {
+    color: #737373;
+    font-size: 12px;
+  }
+  
+  .followButton {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .followButton:hover {
+    color: #00376b;
+  }

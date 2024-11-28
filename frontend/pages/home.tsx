@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import type { NextPage } from 'next';
 import postsData from '../data/posts.json';
 import InstagramPost from '../Components/Post';
+import Sidebar from './sidebar';
+import Recommendations from './recommendations';
 
-const Home = () => {
+const Home: NextPage = () => {
   const [posts, setPosts] = useState(postsData);
 
   useEffect(() => {
@@ -16,8 +19,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <div className="container mx-auto p-4 max-w-[500px]">
+    <div className='container' style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      gap: '20px',
+      padding: '20px'
+    }}>
+        <div className="sidebar">
+            <Sidebar />
+        </div>
+        <div className="main-content" style={{ flex: '1' }}>
         {posts.map((post) => (
           <InstagramPost
             key={post.id}
@@ -27,10 +38,12 @@ const Home = () => {
             description={post.description}
             likes={post.likes}
             timeAgo={post.timeAgo}
-            // mediaCount={1} // Assuming single media for simplicity
           />
         ))}
-      </div>
+        </div>
+        <div className="sidebar">
+            <Recommendations />
+        </div>
     </div>
   );
 };
